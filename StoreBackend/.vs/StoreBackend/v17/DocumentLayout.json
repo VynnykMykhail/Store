@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\storebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\storebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "StoreBackend\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T11:33:29.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\Product.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\Product.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T11:29:22.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StoreBackend.csproj",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
+              "RelativeDocumentMoniker": "StoreBackend\\StoreBackend.csproj",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
+              "RelativeToolTip": "StoreBackend\\StoreBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-25T11:28:39.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "StoreBackend\\appsettings.json",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
+              "RelativeToolTip": "StoreBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-25T07:32:27.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "StoreBackend\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "StoreBackend\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-24T21:10:10.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "StoreBackend\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T21:03:51.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Program.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
+              "RelativeToolTip": "StoreBackend\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:35:43.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\User.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:56:24.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DB.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\DB.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
+              "RelativeToolTip": "StoreBackend\\DB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:54:07.788Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
