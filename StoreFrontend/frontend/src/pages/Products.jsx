@@ -32,15 +32,11 @@ const Products = () => {
                 </div>
                 <div className="products">
                     {currentProducts.map((product) => (
-                        <Link style={{ textDecoration: 'none' }} to={`/products/${product.id}`}>
+                        
                         <Product 
                             key={product.id}
-                            image={product.imageURL}
-                            title={product.name}
-                            price={product.price}
-                            rating={"R: "+product.rating}
+                            product={product}
                         />
-                        </Link>
                     ))}
                 </div>
             </div>

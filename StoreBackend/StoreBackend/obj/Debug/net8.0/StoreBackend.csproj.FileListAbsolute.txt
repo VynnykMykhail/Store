@@ -95,3 +95,4 @@ D:\Домашняя работа\Remix\Store\StoreBackend\StoreBackend\bin\Debug
 D:\Домашняя работа\Remix\Store\StoreBackend\StoreBackend\bin\Debug\net8.0\Nethereum.Util.Rest.dll
 D:\Домашняя работа\Remix\Store\StoreBackend\StoreBackend\bin\Debug\net8.0\Nethereum.Web3.dll
 D:\Домашняя работа\Remix\Store\StoreBackend\StoreBackend\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Домашняя работа\Remix\Store\StoreBackend\StoreBackend\obj\Debug\net8.0\StoreBackend.sourcelink.json

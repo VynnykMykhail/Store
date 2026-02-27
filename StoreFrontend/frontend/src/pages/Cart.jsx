@@ -1,8 +1,8 @@
-import { useOutletContext } from "react-router";
+import { useContext } from "react";
+import { CartContext } from "../context/CartProvider";
 
 const Cart=()=>{
-    const {cart, setCart, totalValue} = useOutletContext();
-
+    const {cart, setCart, totalValue} = useContext(CartContext);
 
     const increaseCount=(title)=>{
         const products=cart.map((prod)=>{
@@ -30,24 +30,31 @@ const Cart=()=>{
     };
 
 
+    if(cart.length==0){
+        return(
+            <div className="main">
+                <h2>Cart is empty</h2>
+            </div>
+        )
+    }
     return(
         <div className="main">
             {cart.map((product)=>(
-            <div className="cart-product">
+            <div className="cart-product" key={product.id}>
                 <div className="display-flex">
                     <div className="image">
                         <img src={product.image} alt="" />
                     </div>
                     <div className="cart-values">
-                        <p className="title">{product.title}</p>
+                        <p className="title">{product.name}</p>
                         <p className="price">{product.price}</p>
                     </div>
                 </div>
                 <div className="cart-count">
-                    <button onClick={()=>increaseCount(product.title)}>+</button>
+                    <button onClick={()=>increaseCount(product.name)}>+</button>
                     <p>{product.count}</p>
-                    <button onClick={()=>decreaseCount(product.title)}>-</button>
-                    <button onClick={()=>deleteProduct(product.title)}>Delete</button>
+                    <button onClick={()=>decreaseCount(product.name)}>-</button>
+                    <button onClick={()=>deleteProduct(product.name)}>Delete</button>
                     <p>Total price: {product.price*product.count}</p>
                 </div>
             </div>

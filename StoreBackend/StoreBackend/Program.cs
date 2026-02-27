@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Nethereum.Web3;
 using StoreBackend_Db;
 
@@ -34,8 +35,11 @@ using StoreBackend_Db;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<Db>();
+var connectionString = builder.Configuration.GetConnectionString("SQLConnection");
+
+builder.Services.AddDbContext<Db>(options=>options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
+
 
 
 builder.Services.AddCors(options =>

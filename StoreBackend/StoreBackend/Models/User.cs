@@ -3,18 +3,26 @@
     public class User
     {
         public int Id { get; set; }
-        public string Address { get; set; }
         public string Name { get; set; }
 
-        public User(string address, string name)
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+
+        public bool IsAdmin { get; set; }
+
+
+        public User(string name, string email, string password, bool isAdmin)
         {
-            Address = address;
             Name = name;
+            Email = email;
+            Password = password;
+            IsAdmin = isAdmin;
         }
 
         public override string ToString()
         {
-            return $"Id: {Id}, Address: {Address}, name: {Name}";
+            return $"Id: {Id}, Name: {Name}";
         }
 
     }

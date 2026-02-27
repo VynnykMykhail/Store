@@ -1,42 +1,47 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './pages/Products.css'
-import axios from "axios";
 import { Outlet, Link } from 'react-router';
 
 
 function App() {
-  /* const [users,setUsers]=useState([]);
-  const [products,setProducts]=useState([]);
-
-  async function getUsers(){
-    const  response  = await axios.get(`${API}/api/users/users`);
-    setUsers(response.data);
+  
+  const [visible,setVisible]=useState(false);
+  const handleClick=()=>{
+    visible? setVisible(false):setVisible(true);
   }
 
-  async function getProducts(){
-    const  response  = await axios.get(`${API}/api/products/products`);
-    setProducts(response.data);
-  }
-
-  useEffect(() => {
-    getUsers().catch(console.error);
-    getProducts().catch(console.error);
-  }, []); */
   return (
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
       <header>
         <div className="header-div">
+          <div className="user-button">
+            <button onClick={handleClick}>
+              <i class="fa-solid fa-user"></i>
+              {visible? (<div className='login-buttons'>
+                <Link to={`/register`}>
+                  <button style={{fontSize:"16px"}}>Register</button>
+                </Link>
+                <Link to={`/login`}>
+                  <button style={{fontSize:"16px"}}>Login</button>
+                </Link>
+                </div>)
+                :(<></>)}
+            </button>
+          </div>
           <div className="cart-button">
-            <Link to={`products/cart`}>
+            <Link to={`/cart`}>
               <button>
                 <i className="fa-solid fa-cart-shopping"></i>
                 <div className="cart-number">
-                  {/* {totalCount} */}
+
                 </div>
               </button>
+            </Link>
+          </div>
+          <div className="favorites-button">
+            <Link style={{ textDecoration: 'none', color: 'white'}} to={`favorites`}>
+              <p>Избранное</p>
             </Link>
           </div>
           <div className="home-button">
