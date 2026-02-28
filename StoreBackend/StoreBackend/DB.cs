@@ -12,6 +12,8 @@ public class Db : DbContext
 
     public DbSet<PurchaseHistory> ProductsPurchaseHistory { get; set; }
 
+    public DbSet<ProductRating> ProductsRatings { get; set; }
+
     public Db(DbContextOptions<Db> options) : base(options)
     {
 

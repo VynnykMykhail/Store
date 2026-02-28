@@ -3,32 +3,60 @@
   "WorkspaceRootPath": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\productsratingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\productsratingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\purchasehistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\purchasehistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\purchasehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\purchasehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\productratingput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\productratingput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\purchasehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\purchasehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,24 +67,12 @@
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\models\\userregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\hasher\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\hasher\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\storebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\storebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|d:\\\u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\remix\\store\\storebackend\\storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A6787577-E678-46F4-A704-31F8AB13527F}|StoreBackend\\StoreBackend.csproj|solutionrelative:storebackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,63 +82,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PurchaseHistory.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\PurchaseHistory.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Models\\PurchaseHistory.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\PurchaseHistory.cs",
-              "RelativeToolTip": "StoreBackend\\Models\\PurchaseHistory.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Id.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\Id.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\Id.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\Id.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\Id.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T15:38:02.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PurchaseHistoryController.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\PurchaseHistoryController.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\PurchaseHistoryController.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\PurchaseHistoryController.cs",
-              "RelativeToolTip": "StoreBackend\\Controllers\\PurchaseHistoryController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAYwCIAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T15:36:39.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserRegister.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\UserRegister.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Models\\UserRegister.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\UserRegister.cs",
-              "RelativeToolTip": "StoreBackend\\Models\\UserRegister.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T09:18:13.476Z",
+              "WhenOpened": "2026-02-28T15:23:59.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductsRatingsController.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductsRatingsController.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\ProductsRatingsController.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductsRatingsController.cs",
+              "RelativeToolTip": "StoreBackend\\Controllers\\ProductsRatingsController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T10:08:07.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "StoreBackend\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwE8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T21:03:51.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "StoreBackend\\Controllers\\ProductController.cs",
               "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\ProductController.cs",
               "RelativeToolTip": "StoreBackend\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAcwFQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T11:33:29.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "PurchaseHistoryController.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\PurchaseHistoryController.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\PurchaseHistoryController.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\PurchaseHistoryController.cs",
+              "RelativeToolTip": "StoreBackend\\Controllers\\PurchaseHistoryController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA3wBwAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T15:36:39.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "StoreBackend\\appsettings.json",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
+              "RelativeToolTip": "StoreBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-25T07:32:27.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRatingPut.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\ProductRatingPut.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\ProductRatingPut.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\ProductRatingPut.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\ProductRatingPut.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T10:45:06.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductRating.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\ProductRating.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\ProductRating.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\ProductRating.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\ProductRating.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T10:06:34.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\Product.cs",
               "RelativeDocumentMoniker": "StoreBackend\\Models\\Product.cs",
@@ -135,69 +203,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "StoreBackend.csproj",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
-              "RelativeDocumentMoniker": "StoreBackend\\StoreBackend.csproj",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
-              "RelativeToolTip": "StoreBackend\\StoreBackend.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-25T11:28:39.41Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
-              "RelativeDocumentMoniker": "StoreBackend\\appsettings.json",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\appsettings.json",
-              "RelativeToolTip": "StoreBackend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-25T07:32:27.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "StoreBackend\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "StoreBackend\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-24T21:10:10.645Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Models\\User.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
-              "RelativeToolTip": "StoreBackend\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "PurchaseHistory.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\PurchaseHistory.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\PurchaseHistory.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\PurchaseHistory.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\PurchaseHistory.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T20:56:24.309Z",
+              "WhenOpened": "2026-02-27T15:38:02.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DB.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\DB.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
-              "RelativeToolTip": "StoreBackend\\DB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T20:54:07.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "PasswordHasher.cs",
               "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Hasher\\PasswordHasher.cs",
               "RelativeDocumentMoniker": "StoreBackend\\Hasher\\PasswordHasher.cs",
@@ -209,7 +228,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
+              "Title": "DB.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\DB.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\DB.cs",
+              "RelativeToolTip": "StoreBackend\\DB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:54:07.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\User.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\User.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:56:24.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "StoreBackend\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "StoreBackend\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-24T21:10:10.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StoreBackend.csproj",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
+              "RelativeDocumentMoniker": "StoreBackend\\StoreBackend.csproj",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\StoreBackend.csproj",
+              "RelativeToolTip": "StoreBackend\\StoreBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-25T11:28:39.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Program.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
+              "RelativeToolTip": "StoreBackend\\Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T20:35:43.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserRegister.cs",
+              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\UserRegister.cs",
+              "RelativeDocumentMoniker": "StoreBackend\\Models\\UserRegister.cs",
+              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\UserRegister.cs",
+              "RelativeToolTip": "StoreBackend\\Models\\UserRegister.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T09:18:13.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "UserLogin.cs",
               "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Models\\UserLogin.cs",
               "RelativeDocumentMoniker": "StoreBackend\\Models\\UserLogin.cs",
@@ -217,33 +309,7 @@
               "RelativeToolTip": "StoreBackend\\Models\\UserLogin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T11:51:56.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Controllers\\UserController.cs",
-              "RelativeToolTip": "StoreBackend\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwBgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T21:03:51.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
-              "RelativeDocumentMoniker": "StoreBackend\\Program.cs",
-              "ToolTip": "D:\\\u0414\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430\\Remix\\Store\\StoreBackend\\StoreBackend\\Program.cs",
-              "RelativeToolTip": "StoreBackend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T20:35:43.136Z"
+              "WhenOpened": "2026-02-27T11:51:56.953Z"
             }
           ]
         }

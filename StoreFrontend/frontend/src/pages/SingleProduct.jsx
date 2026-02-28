@@ -15,10 +15,7 @@ const SingleProduct = ()=>{
         <div className="main">
             <div className="Single-product">
             <FullProduct
-                image={product.imageURL}
-                title={product.name}
-                price={product.price}
-                rating={product.rating}
+                product={product}
             />
             </div>
             <div className="Add">

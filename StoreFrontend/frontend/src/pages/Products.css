@@ -80,6 +80,23 @@ header button{
     margin-left: 15px;
 }
 
+.panel{
+    position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transform: translateX(100%); /* Скрыта за правым краем */
+  transition: transform 0.3s ease-in-out; /* Плавная анимация */
+  z-index: 1000;
+}
+
+.panel.active{
+    transform: translateX(0);
+}
+
 .main{
     width: fit-content;
     max-width: 1000px;

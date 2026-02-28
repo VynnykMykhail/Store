@@ -1,13 +1,33 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './pages/Products.css'
 import { Outlet, Link } from 'react-router';
+import { useNavigate } from 'react-router';
+import { AuthContext } from './context/AuthProvider';
 
 
 function App() {
-  
+  const token = localStorage.getItem("token");
+  const{userAdmin}=useContext(AuthContext);
+  const navigate=useNavigate();
   const [visible,setVisible]=useState(false);
+  const [panelVisible,setPanel]=useState(false);
+
   const handleClick=()=>{
-    visible? setVisible(false):setVisible(true);
+    if(token){
+      navigate('/profile');
+    }
+    else{
+      visible? setVisible(false):setVisible(true);
+    }
+  }
+
+  const handlePanel=()=>{
+    if(panelVisible){
+      setPanel(false);
+    }
+    else{
+      setPanel(true);
+    }
   }
 
   return (
@@ -18,16 +38,12 @@ function App() {
           <div className="user-button">
             <button onClick={handleClick}>
               <i class="fa-solid fa-user"></i>
-              {visible? (<div className='login-buttons'>
-                <Link to={`/register`}>
-                  <button style={{fontSize:"16px"}}>Register</button>
-                </Link>
-                <Link to={`/login`}>
-                  <button style={{fontSize:"16px"}}>Login</button>
-                </Link>
+            </button>
+            {visible? (<div className='login-buttons'>
+                  <button style={{fontSize:"16px"}} onClick={()=>{setVisible(false); navigate("/register")}}>Register</button>
+                  <button style={{fontSize:"16px"}} onClick={()=>{setVisible(false); navigate("/login")}}>Login</button>
                 </div>)
                 :(<></>)}
-            </button>
           </div>
           <div className="cart-button">
             <Link to={`/cart`}>
@@ -51,6 +67,10 @@ function App() {
           </div>
         </div>
       </header>
+      {userAdmin?(<><button onClick={handlePanel}>Panel</button></>):(<></>)}
+      <div id='adminPanel' className={`panel ${panelVisible ? 'active' : ''}`}>
+        <h3>Панель</h3>
+      </div>
       <Outlet/>
     </>
   )

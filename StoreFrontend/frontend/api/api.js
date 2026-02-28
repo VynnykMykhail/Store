@@ -4,7 +4,7 @@ export const api = axios.create({
     baseURL: API
 });
 
-// додавання токен до кожного запиту
+
 api.interceptors.request.use(async config => {
     const token = await localStorage.getItem('token')
     if (token) {

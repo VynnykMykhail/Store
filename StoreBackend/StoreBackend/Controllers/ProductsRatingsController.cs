@@ -1,0 +1,110 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StoreBackend.Models;
+using StoreBackend_Db;
+using System.Security.Cryptography;
+
+[ApiController]
+[Route("api/controllers")]
+public class ProductsRatingsController : Controller
+{
+    private readonly Db _context;
+
+    public ProductsRatingsController(Db context)
+    {
+        _context = context;
+    }
+
+    [HttpGet("productRatings/{id}")]
+
+    public async Task<IActionResult> ProductRatings(int id)
+    {
+        var ratings = await _context.ProductsRatings.Where(r => r.ProductId == id).ToListAsync();
+        if (ratings == null)
+        {
+            return NotFound();
+        }
+        return Ok(ratings);
+    }
+
+
+    [HttpGet("userRatings/{id}")]
+
+    public async Task<IActionResult> UserRatings(int id)
+    {
+        var ratings = await _context.ProductsRatings.Where(r => r.UserId == id).ToListAsync();
+        if (ratings == null)
+        {
+            return NotFound();
+        }
+        return Ok(ratings);
+    }
+
+    [HttpGet("userProductRate/{id}")]
+    [Authorize]
+    public async Task<IActionResult> UserProductRate(int id)
+    {
+        var uId = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+        int cId = int.Parse(uId);
+        var rating = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId && r.ProductId == id);
+        if (rating == null)
+        {
+            return Ok(0);
+        }
+        else
+        {
+            return Ok(rating.Rate);
+        }
+    }
+
+
+    [HttpPost("productRating")]
+    [Authorize]
+    public async Task<IActionResult> ProductRatings([FromBody] ProductRatingPut rating)
+    {
+        try
+        {
+            if (rating.Rate < 1 || rating.Rate > 5)
+            {
+                return BadRequest();
+            }
+            var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+            int cId = int.Parse(id);
+            var product = await _context.Products.FirstAsync(p => p.Id == rating.ProductId);
+            if (product == null)
+            {
+                return BadRequest("Продукт не существует");
+            }
+            Console.WriteLine("1");
+            short rate = (short)rating.Rate;
+            var ratings = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId&&r.ProductId==rating.ProductId);
+            Console.WriteLine("2");
+            if (ratings != null)
+            {
+                Console.WriteLine("existing rating");
+                product.TotalRating -= (int)ratings.Rate;
+                ratings.Rate = rate;
+                product.TotalRating += (int)ratings.Rate;
+            }
+            else
+            {
+                Console.WriteLine("New rating");
+                ProductRating newProduct = new ProductRating(rating.ProductId, cId, rating.Rate);
+                product.RatingCount += 1;
+                product.TotalRating += rate;
+                await _context.ProductsRatings.AddAsync(newProduct);
+            }
+            product.Rating = product.TotalRating / product.RatingCount;
+            _context.Update(product);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
+    }
+
+
+}

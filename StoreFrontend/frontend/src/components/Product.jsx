@@ -22,6 +22,7 @@ const Product = ({product})=>{
             <div className="product-values">
                 <p className="price">{product.price}</p>
                 <p className="rating">R: {product.rating}</p>
+
             </div>
         </div>
     )

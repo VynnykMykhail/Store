@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StoreBackend.Models;
 using StoreBackend_Db;
@@ -15,6 +16,7 @@ public class ProductsController : Controller
     }
 
     [HttpGet("products")]
+    [AllowAnonymous]
     public async Task<IActionResult> Products()
     {
         var products = await _context.Products.ToListAsync();
@@ -22,6 +24,7 @@ public class ProductsController : Controller
     }
 
     [HttpGet("product/{id}")]
+    [AllowAnonymous]
     public async Task<IActionResult> Product(int id)
     {
         var product = await _context.Products.FirstAsync(p => p.Id == id);
@@ -33,7 +36,7 @@ public class ProductsController : Controller
     }
 
     [HttpPost("product")]
-
+    
     public async Task<IActionResult> AddProduct([FromBody] Product product)
     {
         try

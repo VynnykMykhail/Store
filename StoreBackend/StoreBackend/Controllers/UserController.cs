@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using StoreBackend.Hasher;
@@ -47,6 +48,25 @@ public class UsersController : Controller
         return Ok(newUser);
     }
 
+    [HttpGet("profile")]
+    [Authorize]
+    public async Task<IActionResult> Profile()
+    {
+        var id = HttpContext.User.Claims.FirstOrDefault(c=>c.Type.Equals("id"))?.Value;
+        int cId = int.Parse(id);
+        var user = await _context.Users.FirstAsync(u => u.Id == cId);
+        if (user == null)
+        {
+            return BadRequest();
+        }
+        var newUser = new
+        {
+            id = user.Id,
+            name = user.Name
+        };
+        return Ok(newUser);
+    }
+
     [HttpPost("register")]
 
     public async Task<IActionResult> Register([FromBody]  UserRegister user)
@@ -54,20 +74,17 @@ public class UsersController : Controller
         var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
         if (existingUser != null)
         {
-            return BadRequest();
+            return BadRequest("Такой пользователь уже зарегистрирован");
         }
         else
         {
             var password = PasswordHasher.HashPassword(user.Password);
-            Console.WriteLine(password);
-            User newUser = new User(user.Name, user.Email, password, false);
+            User newUser = new User(user.Name, user.Email, password, true);
             bool check = PasswordHasher.ComparePasswords("1234",password);
-            Console.WriteLine(check);
             var token=GenerateToken(newUser);
-            Console.WriteLine(token);
-            //await _context.Users.AddAsync(newUser);
-            //await _context.SaveChangesAsync();
-            return Ok(new {Token=token});
+            await _context.Users.AddAsync(newUser);
+            await _context.SaveChangesAsync();
+            return Ok(new {Token=token, Admin = true });
         }
     }
 
@@ -75,11 +92,10 @@ public class UsersController : Controller
 
     public async Task<IActionResult> Login([FromBody] UserLogin user)
     {
-        Console.WriteLine(user.Email);
         var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
         if (existingUser == null)
         {
-            return BadRequest();
+            return BadRequest("Неправильная почта или пароль");
         }
         else
         {
@@ -88,11 +104,11 @@ public class UsersController : Controller
             if (check) {
                 var token = GenerateToken(existingUser);
                 Console.WriteLine(token);
-                return Ok(new { Token = token });
+                return Ok(new { Token = token, Admin=existingUser.IsAdmin});
             }
             else
             {
-                return BadRequest();
+                return BadRequest("Неправильная почта или пароль");
             }
             
         }
@@ -102,6 +118,7 @@ public class UsersController : Controller
     {
         var claims = new[]
         {
+            new Claim("id", user.Id.ToString(),ClaimValueTypes.Integer),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim("is_admin", user.IsAdmin.ToString(), ClaimValueTypes.Boolean),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

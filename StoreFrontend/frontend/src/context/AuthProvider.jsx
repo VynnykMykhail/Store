@@ -5,19 +5,40 @@ const API = import.meta.env.VITE_API_BASE;
 export const AuthContext=createContext(null);
 
 const AuthProvider = ({children}) => {
+    const [userAdmin,setUserAdmin]=useState(localStorage.getItem('userAdmin'));
     const loginRequest=async (values)=>{
-        console.log(values);
+        let response;
         try{
-            const response= await axios.post(`${API}/api/controllers/login`, values);
-            const {token}=response.data;
+            response= await axios.post(`${API}/api/controllers/login`, values);
+            const {token, admin}=response.data;
             console.log(token);
             localStorage.setItem('token', token);
+            localStorage.setItem('userAdmin', admin);
+            return response;
         }catch(error){
-            console.log(error);
+            console.log(error.response.data);
+            return error.response.data;
+        }
+        
+    }
+
+    const registerRequest=async (values)=>{
+        let response;
+        try{
+            response= await axios.post(`${API}/api/controllers/register`, values);
+            const {token, admin}=response.data;
+            console.log(token);
+            localStorage.setItem('token', token);
+            localStorage.setItem('userAdmin', admin);
+        }catch(error){
+            console.log(error.response.data);
+            return(error.response.data);
         }
     }
+
+
     return (
-        <AuthContext.Provider value={{loginRequest}}>
+        <AuthContext.Provider value={{loginRequest, registerRequest, userAdmin,setUserAdmin}}>
             {children}
         </AuthContext.Provider>
     );

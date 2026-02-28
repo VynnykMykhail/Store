@@ -111,9 +111,77 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PurchaseHistoryController",
+    "Method": "ProductHistory",
+    "RelativePath": "api/controllers/ProductHistory/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductsRatingsController",
+    "Method": "ProductRatings",
+    "RelativePath": "api/controllers/productRating",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rating",
+        "Type": "StoreBackend.Models.ProductRatingPut",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductsRatingsController",
+    "Method": "ProductRatings",
+    "RelativePath": "api/controllers/productRatings/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ProductsController",
     "Method": "Products",
     "RelativePath": "api/controllers/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsersController",
+    "Method": "Profile",
+    "RelativePath": "api/controllers/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PurchaseHistoryController",
+    "Method": "History",
+    "RelativePath": "api/controllers/PurchaseHistory",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -140,6 +208,54 @@
     "ContainingType": "UsersController",
     "Method": "User",
     "RelativePath": "api/controllers/user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PurchaseHistoryController",
+    "Method": "UserHistory",
+    "RelativePath": "api/controllers/UserHistory/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductsRatingsController",
+    "Method": "UserProductRate",
+    "RelativePath": "api/controllers/userProductRate/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductsRatingsController",
+    "Method": "UserRatings",
+    "RelativePath": "api/controllers/userRatings/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
