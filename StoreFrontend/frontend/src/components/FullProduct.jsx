@@ -11,7 +11,6 @@ const FullProduct = ({product})=>{
             if(token){
                 let rate;
                 try{
-                    console.log(product.id);
                     const rate=await api.get(`${API}/api/controllers/userProductRate/`+product.id);
                     setRating(rate.data);
                     
@@ -21,15 +20,13 @@ const FullProduct = ({product})=>{
             }
         }
         get();
-        console.log(rating);
-    },0);
+    },[rating]);
     
 
     const rate=async (value)=>{
         if(token){
             try{
                 const values={ProductId:product.id,Rate:value};
-                console.log(values);
                 const response = await api.post(`${API}/api/controllers/productRating`, values);
             }
             catch(error){

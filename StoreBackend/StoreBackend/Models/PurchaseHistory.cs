@@ -12,15 +12,17 @@
 
         public DateTime Date { get; set; }
 
+        public int Count { get; set; }
         public int Payment {  get; set; }
 
 
-        public PurchaseHistory( int productId, int userId, string address, DateTime date, int payment)
+        public PurchaseHistory( int productId, int userId, string address, DateTime date, int count, int payment)
         {
             ProductId = productId;
             UserId = userId;
             Address = address;
             Date = date;
+            Count = count;
             Payment = payment;
         }
     }

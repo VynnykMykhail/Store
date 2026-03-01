@@ -6,33 +6,6 @@ using StoreBackend_Db;
 using System.Text;
 
 
-//var builder = WebApplication.CreateBuilder(args);
-
-//// Add services to the container.
-//builder.Services.AddRazorPages();
-
-//builder.Services.AddDbContext<Db>();
-
-//var app = builder.Build();
-
-//// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Error");
-//    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-//    app.UseHsts();
-//}
-
-//app.UseHttpsRedirection();
-//app.UseStaticFiles();
-
-//app.UseRouting();
-
-//app.UseAuthorization();
-
-//app.MapRazorPages();
-
-//app.Run();
 
 
 
@@ -46,10 +19,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddAuthentication(options =>
 {
-    // Схема для аут-ции каждого запроса
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; // Bearer
-    // Схема для вызова аут-ции (если токен не валиден --> 401)
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme; // Bearer
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -78,16 +49,16 @@ builder.Services.AddCors(options =>
     });
 });
 
-//builder.Services.AddSingleton(sp =>
-//{
-//    var cfg = sp.GetRequiredService<IConfiguration>();
-//    var rpcUrl = cfg["Blockchain:RpcUrl"];
+builder.Services.AddSingleton(sp =>
+{
+    var cfg = sp.GetRequiredService<IConfiguration>();
+    var rpcUrl = cfg["Blockchain:RpcUrl"];
 
-//    if (string.IsNullOrWhiteSpace(rpcUrl))
-//        throw new InvalidOperationException("Не найден Blockchain:RpcUrl в appsettings.json");
+    if (string.IsNullOrWhiteSpace(rpcUrl))
+        throw new InvalidOperationException("Не найден Blockchain:RpcUrl в appsettings.json");
 
-//    return new Web3(rpcUrl);
-//});
+    return new Web3(rpcUrl);
+});
 
 var app = builder.Build();
 

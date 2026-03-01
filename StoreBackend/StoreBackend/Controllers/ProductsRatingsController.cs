@@ -20,12 +20,19 @@ public class ProductsRatingsController : Controller
 
     public async Task<IActionResult> ProductRatings(int id)
     {
-        var ratings = await _context.ProductsRatings.Where(r => r.ProductId == id).ToListAsync();
-        if (ratings == null)
+        try
         {
-            return NotFound();
+            var ratings = await _context.ProductsRatings.Where(r => r.ProductId == id).ToListAsync();
+            if (ratings == null)
+            {
+                return NotFound();
+            }
+            return Ok(ratings);
         }
-        return Ok(ratings);
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
     }
 
 
@@ -33,28 +40,42 @@ public class ProductsRatingsController : Controller
 
     public async Task<IActionResult> UserRatings(int id)
     {
-        var ratings = await _context.ProductsRatings.Where(r => r.UserId == id).ToListAsync();
-        if (ratings == null)
+        try
         {
-            return NotFound();
+            var ratings = await _context.ProductsRatings.Where(r => r.UserId == id).ToListAsync();
+            if (ratings == null)
+            {
+                return NotFound();
+            }
+            return Ok(ratings);
         }
-        return Ok(ratings);
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
     }
 
     [HttpGet("userProductRate/{id}")]
     [Authorize]
     public async Task<IActionResult> UserProductRate(int id)
     {
-        var uId = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
-        int cId = int.Parse(uId);
-        var rating = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId && r.ProductId == id);
-        if (rating == null)
+        try
         {
-            return Ok(0);
+            var uId = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+            int cId = int.Parse(uId);
+            var rating = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId && r.ProductId == id);
+            if (rating == null)
+            {
+                return Ok(0);
+            }
+            else
+            {
+                return Ok(rating.Rate);
+            }
         }
-        else
+        catch (Exception ex)
         {
-            return Ok(rating.Rate);
+            return BadRequest();
         }
     }
 

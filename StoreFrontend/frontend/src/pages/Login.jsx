@@ -4,8 +4,8 @@ import { useNavigate } from "react-router";
 
 const Login = () => {
     const {loginRequest}=useContext(AuthContext);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Password, setPassword] = useState("");
     const [error,setError]=useState(null);
     
 
@@ -15,12 +15,12 @@ const Login = () => {
     const handleLogin=async ()=>{
         setError(null);
         try{
-            const response=await loginRequest({email,password});
+            const response=await loginRequest({Email,Password});
             if(response.status==200){
                 navigate("/profile");
             }
             else{
-                setError(response);
+                setError(response.data);
             }
             console.log(response);
         }
@@ -33,8 +33,8 @@ const Login = () => {
         <div>
             <div className="registration">
                 <h2>Login</h2>
-                <input type="text" label="Email" placeholder="Почта" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                <input type="text" label="Password" placeholder="Пароль" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                <input type="text" label="Email" placeholder="Почта" value={Email} onChange={(e)=>setEmail(e.target.value)}/>
+                <input type="text" label="Password" placeholder="Пароль" value={Password} onChange={(e)=>setPassword(e.target.value)}/>
                 {error?(<><p>{error}</p></>):(<></>)}
             </div>
             <button onClick={handleLogin}>

@@ -1,8 +1,11 @@
 import { Link } from "react-router";
 import { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesProvider";
+import { AuthContext } from "../context/AuthProvider";
 const Product = ({product})=>{
     const {isInFavorites,addToFavorites}=useContext(FavoritesContext);
+    const{userAdmin}=useContext(AuthContext);
+
     const handleClick=()=>{
         addToFavorites(product);
     }
@@ -20,9 +23,9 @@ const Product = ({product})=>{
             </Link>
             <p className="title">{product.name}</p>
             <div className="product-values">
+                {userAdmin?(<><p>Id: {product.id}</p></>):(<></>)}
                 <p className="price">{product.price}</p>
                 <p className="rating">R: {product.rating}</p>
-
             </div>
         </div>
     )

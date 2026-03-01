@@ -1,23 +1,23 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 const API = import.meta.env.VITE_API_BASE;
-
+import api from '../../api/api';
 export const AuthContext=createContext(null);
 
 const AuthProvider = ({children}) => {
-    const [userAdmin,setUserAdmin]=useState(localStorage.getItem('userAdmin'));
+    const [userAdmin,setUserAdmin]=useState(false);
     const loginRequest=async (values)=>{
         let response;
         try{
-            response= await axios.post(`${API}/api/controllers/login`, values);
+            response= await api.post(`${API}/api/controllers/login`, values);
             const {token, admin}=response.data;
             console.log(token);
             localStorage.setItem('token', token);
             localStorage.setItem('userAdmin', admin);
             return response;
         }catch(error){
-            console.log(error.response.data);
-            return error.response.data;
+            console.log(error);
+            return error;
         }
         
     }
@@ -25,17 +25,23 @@ const AuthProvider = ({children}) => {
     const registerRequest=async (values)=>{
         let response;
         try{
-            response= await axios.post(`${API}/api/controllers/register`, values);
+            response= await api.post(`${API}/api/controllers/register`, values);
             const {token, admin}=response.data;
             console.log(token);
             localStorage.setItem('token', token);
             localStorage.setItem('userAdmin', admin);
+            return response;
         }catch(error){
-            console.log(error.response.data);
-            return(error.response.data);
+            console.log(error);
+            return(error);
         }
     }
-
+    useEffect(()=>{
+        const getAdmin=localStorage.getItem("userAdmin");
+        if(getAdmin){
+            setUserAdmin(JSON.parse(getAdmin));
+        }
+    });
 
     return (
         <AuthContext.Provider value={{loginRequest, registerRequest, userAdmin,setUserAdmin}}>

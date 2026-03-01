@@ -22,7 +22,11 @@ const CartProvider = ({children}) => {
     cart.map((prod)=>{
         count+=prod.count*prod.price
       })
-    setValue(count.toFixed(2));
+    setValue(count);
+  }
+
+  const ClearCart=()=>{
+    setCart([]);
   }
 
     useEffect(()=>{
@@ -59,7 +63,7 @@ const CartProvider = ({children}) => {
     }
   }
     return (
-        <CartContext.Provider value={{cart, setCart, addToCart, totalValue,}}>
+        <CartContext.Provider value={{cart, setCart, addToCart, ClearCart, totalValue,totalCount}}>
             {children}
         </CartContext.Provider>
     );

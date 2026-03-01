@@ -1,12 +1,25 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartProvider";
+import { useNavigate } from "react-router";
 
 const Cart=()=>{
     const {cart, setCart, totalValue} = useContext(CartContext);
+    const [error,setError]=useState(null);
+    const token = localStorage.getItem("token");
+    const navigate=useNavigate();
+    const handleClick=()=>{
+        setError(null);
+        if(token){
+            navigate("/orderConfirm");
+        }
+        else{
+            setError("Сначала войдите в аккаунт")
+        }
+    }
 
-    const increaseCount=(title)=>{
+    const increaseCount=(id)=>{
         const products=cart.map((prod)=>{
-            if(prod.title===title){
+            if(prod.id===id){
                 return{...prod, count: prod.count+1}
             }
             return prod;
@@ -14,9 +27,9 @@ const Cart=()=>{
         setCart(products)
     };
 
-    const decreaseCount=(title)=>{
+    const decreaseCount=(id)=>{
         const products=cart.map((prod)=>{
-            if(prod.title===title){
+            if(prod.id===id){
                 return{...prod, count: prod.count-1}
             }
             return prod;
@@ -24,8 +37,8 @@ const Cart=()=>{
         setCart(products)
     };
 
-    const deleteProduct=(title)=>{
-        const products=cart.filter(prod=>prod.title!==title)
+    const deleteProduct=(id)=>{
+        const products=cart.filter(prod=>prod.id!==id)
         setCart(products);
     };
 
@@ -51,10 +64,10 @@ const Cart=()=>{
                     </div>
                 </div>
                 <div className="cart-count">
-                    <button onClick={()=>increaseCount(product.name)}>+</button>
+                    <button onClick={()=>increaseCount(product.id)}>+</button>
                     <p>{product.count}</p>
-                    <button onClick={()=>decreaseCount(product.name)}>-</button>
-                    <button onClick={()=>deleteProduct(product.name)}>Delete</button>
+                    <button onClick={()=>decreaseCount(product.id)}>-</button>
+                    <button onClick={()=>deleteProduct(product.id)}>Delete</button>
                     <p>Total price: {product.price*product.count}</p>
                 </div>
             </div>
@@ -63,6 +76,10 @@ const Cart=()=>{
             {cart.lenght=== 0 ? ( <h3>Cart is empty</h3>) : ( 
                 <h3>In total: {totalValue}</h3>)
             }
+            <button className="Add" onClick={handleClick}>
+                Оформить заказ
+            </button>
+            {error?(<><p>{error}</p></>):(<></>)}
             
         </div>
     )

@@ -3,11 +3,14 @@ import './pages/Products.css'
 import { Outlet, Link } from 'react-router';
 import { useNavigate } from 'react-router';
 import { AuthContext } from './context/AuthProvider';
+import AdminPanel from './components/AdminPanel';
+import { CartContext } from './context/CartProvider';
 
 
 function App() {
   const token = localStorage.getItem("token");
   const{userAdmin}=useContext(AuthContext);
+  const{totalCount}=useContext(CartContext);
   const navigate=useNavigate();
   const [visible,setVisible]=useState(false);
   const [panelVisible,setPanel]=useState(false);
@@ -37,7 +40,7 @@ function App() {
         <div className="header-div">
           <div className="user-button">
             <button onClick={handleClick}>
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
             </button>
             {visible? (<div className='login-buttons'>
                   <button style={{fontSize:"16px"}} onClick={()=>{setVisible(false); navigate("/register")}}>Register</button>
@@ -50,7 +53,7 @@ function App() {
               <button>
                 <i className="fa-solid fa-cart-shopping"></i>
                 <div className="cart-number">
-
+                  {totalCount}
                 </div>
               </button>
             </Link>
@@ -68,8 +71,8 @@ function App() {
         </div>
       </header>
       {userAdmin?(<><button onClick={handlePanel}>Panel</button></>):(<></>)}
-      <div id='adminPanel' className={`panel ${panelVisible ? 'active' : ''}`}>
-        <h3>Панель</h3>
+      <div className={`panel ${panelVisible ? 'active' : ''}`}>
+        <AdminPanel/>
       </div>
       <Outlet/>
     </>

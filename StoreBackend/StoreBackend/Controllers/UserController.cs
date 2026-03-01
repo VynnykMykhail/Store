@@ -23,94 +23,161 @@ public class UsersController : Controller
     }
 
     [HttpGet("users")]
+    [Authorize]
     public async Task<IActionResult> Users()
     {
-        var users = await _context.Users.ToListAsync();
-        Console.WriteLine(users);
-        users.ForEach(u => Console.WriteLine(u));
-        return Ok(users);
-    }
-
-    [HttpGet("user/{id}")]
-
-    public async Task<IActionResult> User(int id)
-    {
-        var user = await _context.Users.FirstAsync(u => u.Id == id);
-        if (user == null)
+        try
+        {
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            var users = await _context.Users.ToListAsync();
+            Console.WriteLine(users);
+            users.ForEach(u => Console.WriteLine(u));
+            return Ok(users);
+        }
+        catch (Exception ex)
         {
             return BadRequest();
         }
-        var newUser = new
+    }
+
+    [HttpGet("user/{id}")]
+    [Authorize]
+    public async Task<IActionResult> User(int id)
+    {
+        try
         {
-            id=user.Id,
-            name=user.Name
-        };
-        return Ok(newUser);
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            var user = await _context.Users.FirstAsync(u => u.Id == id);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            var newUser = new
+            {
+                id = user.Id,
+                name = user.Name
+            };
+            return Ok(newUser);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
+    }
+
+    [HttpGet("userExists/{id}")]
+    [AllowAnonymous]
+    public async Task<IActionResult> UserExists(int id)
+    {
+        try
+        {
+            var user = await _context.Users.FirstAsync(u => u.Id == id);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            return Ok(true);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest("Пользователь не найден");
+        }
     }
 
     [HttpGet("profile")]
     [Authorize]
     public async Task<IActionResult> Profile()
     {
-        var id = HttpContext.User.Claims.FirstOrDefault(c=>c.Type.Equals("id"))?.Value;
-        int cId = int.Parse(id);
-        var user = await _context.Users.FirstAsync(u => u.Id == cId);
-        if (user == null)
+        try
+        {
+            var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+            int cId = int.Parse(id);
+            var user = await _context.Users.FirstAsync(u => u.Id == cId);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            var newUser = new
+            {
+                id = user.Id,
+                name = user.Name
+            };
+            return Ok(newUser);
+        }
+        catch (Exception ex)
         {
             return BadRequest();
         }
-        var newUser = new
-        {
-            id = user.Id,
-            name = user.Name
-        };
-        return Ok(newUser);
     }
 
     [HttpPost("register")]
 
     public async Task<IActionResult> Register([FromBody]  UserRegister user)
     {
-        var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
-        if (existingUser != null)
+        try
         {
-            return BadRequest("Такой пользователь уже зарегистрирован");
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+            if (existingUser != null)
+            {
+                return BadRequest("Такой пользователь уже зарегистрирован");
+            }
+            else
+            {
+                var password = PasswordHasher.HashPassword(user.Password);
+                User newUser = new User(user.Name, user.Email, password, false);
+                bool check = PasswordHasher.ComparePasswords("1234", password);
+                await _context.Users.AddAsync(newUser);
+                await _context.SaveChangesAsync();
+                existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+                var token = GenerateToken(existingUser);
+                return Ok(new { Token = token, Admin = false });
+            }
         }
-        else
+        catch (Exception ex)
         {
-            var password = PasswordHasher.HashPassword(user.Password);
-            User newUser = new User(user.Name, user.Email, password, true);
-            bool check = PasswordHasher.ComparePasswords("1234",password);
-            var token=GenerateToken(newUser);
-            await _context.Users.AddAsync(newUser);
-            await _context.SaveChangesAsync();
-            return Ok(new {Token=token, Admin = true });
+            return BadRequest();
         }
     }
 
     [HttpPost("login")]
-
+    [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] UserLogin user)
     {
-        var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
-        if (existingUser == null)
+        try
         {
-            return BadRequest("Неправильная почта или пароль");
-        }
-        else
-        {
-            bool check = PasswordHasher.ComparePasswords(user.Password, existingUser.Password);
-            Console.WriteLine(check);
-            if (check) {
-                var token = GenerateToken(existingUser);
-                Console.WriteLine(token);
-                return Ok(new { Token = token, Admin=existingUser.IsAdmin});
-            }
-            else
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+            if (existingUser == null)
             {
                 return BadRequest("Неправильная почта или пароль");
             }
-            
+            else
+            {
+                bool check = PasswordHasher.ComparePasswords(user.Password, existingUser.Password);
+                Console.WriteLine(check);
+                if (check)
+                {
+                    var token = GenerateToken(existingUser);
+                    Console.WriteLine(token);
+                    return Ok(new { Token = token, Admin = existingUser.IsAdmin });
+                }
+                else
+                {
+                    return BadRequest("Неправильная почта или пароль");
+                }
+
+            }
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
         }
     }
 

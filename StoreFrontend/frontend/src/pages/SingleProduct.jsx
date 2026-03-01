@@ -19,7 +19,7 @@ const SingleProduct = ()=>{
             />
             </div>
             <div className="Add">
-                    {<button onClick={handleClick}>Добавить в корзину</button>}
+                    {<button onClick={handleClick} disabled={!product.isAvaible}>{product.isAvaible?("Добавить в корзину"):("Товар недоступен")}</button>}
             </div>
         </div>
     )

@@ -19,29 +19,48 @@ public class ProductsController : Controller
     [AllowAnonymous]
     public async Task<IActionResult> Products()
     {
-        var products = await _context.Products.ToListAsync();
-        return Ok(products);
+        try
+        {
+            var products = await _context.Products.ToListAsync();
+            return Ok(products);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
     }
 
     [HttpGet("product/{id}")]
     [AllowAnonymous]
     public async Task<IActionResult> Product(int id)
     {
-        var product = await _context.Products.FirstAsync(p => p.Id == id);
-        if (product == null)
+        try
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product == null)
+            {
+                return BadRequest("Product not found");
+            }
+            return Ok(product);
+        }
+        catch (Exception ex)
         {
             return BadRequest();
         }
-        return Ok(product);
     }
 
     [HttpPost("product")]
-    
-    public async Task<IActionResult> AddProduct([FromBody] Product product)
+    [Authorize]
+    public async Task<IActionResult> AddProduct([FromBody] ProductPut product)
     {
         try
         {
-            Product newProduct = product;
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            Product newProduct = new Product(product.Name,product.Description,product.Price,0,0,0,product.IsAvaible,product.ImageURL);
             Console.WriteLine(product);
             await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
@@ -54,30 +73,55 @@ public class ProductsController : Controller
     }
 
     [HttpPut("product/{id}")]
-    public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+    [Authorize]
+    public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product newProduct)
     {
         try
         {
-            product.Id = id;
+            Console.WriteLine("2");
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            Console.WriteLine("1");
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product == null)
+            {
+                Console.WriteLine("Product not exists");
+                return BadRequest();
+            }
+            product.Name = newProduct.Name;
+            product.Description = newProduct.Description;
+            product.Price = newProduct.Price;
+            product.IsAvaible = newProduct.IsAvaible;
+            product.ImageURL = newProduct.ImageURL;
             _context.Update(product);
             await _context.SaveChangesAsync();
             return Ok();
         }
         catch (Exception error)
         {
+            Console.WriteLine(error);
             return BadRequest();
         }
     }
 
     [HttpDelete("product/{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteProduct(int id)
     {
         try
         {
-            var product = await _context.Products.FirstAsync(p => p.Id == id);
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {
-                return BadRequest();
+                return BadRequest("Продукт не найден");
             }
             _context.Remove(product);
             await _context.SaveChangesAsync();
