@@ -19,7 +19,7 @@ const Register = () => {
                 navigate("/profile");
             }
             else{
-                setError(response);
+                setError(response.data);
             }
         }
         catch(error){
@@ -29,17 +29,24 @@ const Register = () => {
 
 
     return (
-        <div>
-            <div className="registration">
-                <h2>Register</h2>
-                <input type="text" label="Name" placeholder="Имя" value={name} onChange={(e)=>setName(e.target.value)}/>
-                <input type="text" label="Email" placeholder="Почта" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                <input type="text" label="Password" placeholder="Пароль" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+        <div className="main">
+            <div className="form" style={{margin:0}}>
+                <h2>Регистрация</h2>
+                <div>
+                    <input type="text" label="Name" placeholder="Имя" value={name} onChange={(e)=>setName(e.target.value)}/>
+                </div>
+                <div>
+                    <input type="text" label="Email" placeholder="Почта" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                </div>
+                <div>
+                    <input type="text" label="Password" placeholder="Пароль" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                </div>
                 {error?(<><p>{error}</p></>):(<></>)}
+                <button onClick={handleRegister}>
+                    Зарегистрироваться
+                </button>
             </div>
-            <button onClick={handleRegister}>
-                Register
-            </button>
+            
         </div>
     );
 }

@@ -30,16 +30,21 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <div className="registration">
-                <h2>Login</h2>
-                <input type="text" label="Email" placeholder="Почта" value={Email} onChange={(e)=>setEmail(e.target.value)}/>
-                <input type="text" label="Password" placeholder="Пароль" value={Password} onChange={(e)=>setPassword(e.target.value)}/>
+        <div className="main">
+            <div className="form">
+                <h2>Вход в аккаунт</h2>
+                <div>
+                    <input type="text" label="Email" placeholder="Почта" value={Email} onChange={(e)=>setEmail(e.target.value)}/>
+                </div>
+                <div>
+                    <input type="text" label="Password" placeholder="Пароль" value={Password} onChange={(e)=>setPassword(e.target.value)}/>
+                </div>
                 {error?(<><p>{error}</p></>):(<></>)}
+                <button onClick={handleLogin}>
+                    Войти
+                </button>
             </div>
-            <button onClick={handleLogin}>
-                Login
-            </button>
+            
         </div>
     );
 }

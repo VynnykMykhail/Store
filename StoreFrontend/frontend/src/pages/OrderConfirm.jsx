@@ -14,6 +14,10 @@ const OrderConfirm = () => {
     const handleClick=async ()=>{
         
         try{
+            const response=await api.get(`${API}/api/controllers/blockedCheck`);
+            if(response.data==true){
+                throw new Error;
+            }
             await deposit(totalValue);
             alert("Оплата успешна");
             createInfo();
@@ -48,11 +52,11 @@ const OrderConfirm = () => {
             <p>Всего к оплате: {totalValue}</p>
             {account?(<>
                 <p>Адрес кошелька: {account}</p>
-                <button onClick={connect}>Переподключить</button>
-                <button onClick={handleClick}>Оплатить</button>
+                <button className="dark-button" onClick={connect}>Переподключить</button>
+                <button className="dark-button" onClick={handleClick}>Оплатить</button>
             </>):(
                 <>
-                    <button onClick={connect}>Подключить кошелёк</button>
+                    <button className="dark-button" onClick={connect}>Подключить кошелёк</button>
                 </>
             )}
         </div>

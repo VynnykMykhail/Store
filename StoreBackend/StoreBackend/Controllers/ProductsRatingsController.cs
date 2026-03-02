@@ -92,25 +92,31 @@ public class ProductsRatingsController : Controller
             }
             var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
             int cId = int.Parse(id);
-            var product = await _context.Products.FirstAsync(p => p.Id == rating.ProductId);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == cId);
+            if (user == null)
+            {
+                return BadRequest("Пользователя не существует");
+            }
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == rating.ProductId);
             if (product == null)
             {
                 return BadRequest("Продукт не существует");
             }
-            Console.WriteLine("1");
+            var history = await _context.ProductsPurchaseHistory.FirstOrDefaultAsync(h => h.UserId == cId && h.ProductId == rating.ProductId);
+            if (history == null)
+            {
+                return BadRequest("Нельзя оценить продукт который не приобрели");
+            }
             short rate = (short)rating.Rate;
-            var ratings = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId&&r.ProductId==rating.ProductId);
-            Console.WriteLine("2");
+            var ratings = await _context.ProductsRatings.FirstOrDefaultAsync(r => r.UserId == cId && r.ProductId == rating.ProductId);
             if (ratings != null)
             {
-                Console.WriteLine("existing rating");
                 product.TotalRating -= (int)ratings.Rate;
                 ratings.Rate = rate;
                 product.TotalRating += (int)ratings.Rate;
             }
             else
             {
-                Console.WriteLine("New rating");
                 ProductRating newProduct = new ProductRating(rating.ProductId, cId, rating.Rate);
                 product.RatingCount += 1;
                 product.TotalRating += rate;
@@ -127,5 +133,39 @@ public class ProductsRatingsController : Controller
         }
     }
 
+
+    [HttpDelete("productRating/{id}")]
+    [Authorize]
+    public async Task<IActionResult> ResetProductRating(int id)
+    {
+        try
+        {
+            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
+            if (bool.Parse(admin) == false)
+            {
+                return Unauthorized();
+            }
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product == null)
+            {
+                return BadRequest("Продукт не найден");
+            }
+            var ratings = await _context.ProductsRatings.Where(r => r.ProductId == id).ToListAsync();
+            if (ratings == null)
+            {
+                return NotFound();
+            }
+            product.Rating = 0;
+            product.TotalRating = 0;
+            product.RatingCount = 0;
+            _context.Update(product);
+            _context.ProductsRatings.RemoveRange(ratings);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        catch (Exception ex) {
+            return BadRequest();
+        }
+    }
 
 }

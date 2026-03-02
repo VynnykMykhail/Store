@@ -60,23 +60,23 @@ const Cart=()=>{
                     </div>
                     <div className="cart-values">
                         <p className="title">{product.name}</p>
-                        <p className="price">{product.price}</p>
+                        <p className="price">Стоимость: {product.price}</p>
                     </div>
                 </div>
                 <div className="cart-count">
                     <button onClick={()=>increaseCount(product.id)}>+</button>
                     <p>{product.count}</p>
                     <button onClick={()=>decreaseCount(product.id)}>-</button>
-                    <button onClick={()=>deleteProduct(product.id)}>Delete</button>
-                    <p>Total price: {product.price*product.count}</p>
+                    <button onClick={()=>deleteProduct(product.id)}>Убрать</button>
+                    <p>Всего за товар: {product.price*product.count}</p>
                 </div>
             </div>
             
             ))}
-            {cart.lenght=== 0 ? ( <h3>Cart is empty</h3>) : ( 
-                <h3>In total: {totalValue}</h3>)
+            {cart.lenght=== 0 ? ( <h3>Тележка пуста</h3>) : ( 
+                <h3>Всего: {totalValue}</h3>)
             }
-            <button className="Add" onClick={handleClick}>
+            <button className="dark-button" onClick={handleClick}>
                 Оформить заказ
             </button>
             {error?(<><p>{error}</p></>):(<></>)}

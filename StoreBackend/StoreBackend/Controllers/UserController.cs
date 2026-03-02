@@ -33,9 +33,7 @@ public class UsersController : Controller
             {
                 return Unauthorized();
             }
-            var users = await _context.Users.ToListAsync();
-            Console.WriteLine(users);
-            users.ForEach(u => Console.WriteLine(u));
+            var users = await _context.Users.Select(u => new {u.Id, u.Name,u.Email,u.IsAdmin}).ToListAsync();
             return Ok(users);
         }
         catch (Exception ex)
@@ -55,15 +53,17 @@ public class UsersController : Controller
             {
                 return Unauthorized();
             }
-            var user = await _context.Users.FirstAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             if (user == null)
             {
-                return BadRequest();
+                return BadRequest("Пользователь не найден");
             }
             var newUser = new
             {
                 id = user.Id,
-                name = user.Name
+                name = user.Name,
+                email = user.Email,
+                isAdmin=user.IsAdmin,
             };
             return Ok(newUser);
         }
@@ -79,10 +79,10 @@ public class UsersController : Controller
     {
         try
         {
-            var user = await _context.Users.FirstAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             if (user == null)
             {
-                return BadRequest();
+                return BadRequest("Пользователь не найден");
             }
             return Ok(true);
         }
@@ -100,10 +100,10 @@ public class UsersController : Controller
         {
             var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
             int cId = int.Parse(id);
-            var user = await _context.Users.FirstAsync(u => u.Id == cId);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == cId);
             if (user == null)
             {
-                return BadRequest();
+                return BadRequest("Пользователь не найден");
             }
             var newUser = new
             {
@@ -119,7 +119,7 @@ public class UsersController : Controller
     }
 
     [HttpPost("register")]
-
+    [AllowAnonymous]
     public async Task<IActionResult> Register([FromBody]  UserRegister user)
     {
         try
@@ -131,6 +131,17 @@ public class UsersController : Controller
             }
             else
             {
+                if (user.Name.Length < 4)
+                {
+                    return BadRequest("Слишком короткое имя");
+                }
+                if (!user.Email.Contains("@gmail.com")) {
+                    return BadRequest("Неправильный тип почты");
+                }
+                if (user.Password.Length < 6)
+                {
+                    return BadRequest("Слишком короткий пароль");
+                }
                 var password = PasswordHasher.HashPassword(user.Password);
                 User newUser = new User(user.Name, user.Email, password, false);
                 bool check = PasswordHasher.ComparePasswords("1234", password);
@@ -181,6 +192,8 @@ public class UsersController : Controller
         }
     }
 
+
+    //Базовая реализация Jwt токена, в основном для проверки Id и является ли пользователь админом. Токен не обновляется, проверку истечения срока выключил
     public string GenerateToken(User user)
     {
         var claims = new[]

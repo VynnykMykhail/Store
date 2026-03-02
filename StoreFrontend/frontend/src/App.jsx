@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import './pages/Products.css'
+import './App.css'
 import { Outlet, Link } from 'react-router';
 import { useNavigate } from 'react-router';
 import { AuthContext } from './context/AuthProvider';
@@ -65,12 +65,12 @@ function App() {
           </div>
           <div className="home-button">
             <Link style={{ textDecoration: 'none', color: 'white'}} to={`products`}>
-              <p>Home</p>
+              <p>Домой</p>
             </Link>
           </div>
         </div>
       </header>
-      {userAdmin?(<><button onClick={handlePanel}>Panel</button></>):(<></>)}
+      {userAdmin?(<><button className="dark-button" onClick={handlePanel}>Панель</button></>):(<></>)}
       <div className={`panel ${panelVisible ? 'active' : ''}`}>
         <AdminPanel/>
       </div>

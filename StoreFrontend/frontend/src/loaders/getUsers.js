@@ -12,6 +12,6 @@ export const getUsers=async () =>{
 }
 
 export const getUser=async ({params}) =>{
-    const response = await api.get(`${API}/api/controllers/users`+params.id);
+    const response = await api.get(`${API}/api/controllers/user/`+params.id);
     return response.data;
 }

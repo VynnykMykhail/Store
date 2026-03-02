@@ -20,7 +20,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div className="form">
             <div>
                 <input type="text" placeholder="Название товара" value={product.Name} onChange={(e)=>setProduct({...product, Name: e.target.value})}/>
             </div>
@@ -36,7 +36,7 @@ const AddProduct = () => {
             <div>
                 <input type="text" placeholder="URL изображения товара" value={product.ImageURL} onChange={(e)=>setProduct({...product, ImageURL: e.target.value})}/>
             </div>
-            <button onClick={add}>Add</button>
+            <button onClick={add}>Добавить</button>
             {error?(<><p>{error}</p></>):(<></>)}
         </div>
     );

@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 
 namespace StoreBackend.Hasher
 {
+    //Хеширование пароля, соль просто хранится вместе с паролем
     public class PasswordHasher
     {
         private const int saltSize = 16;

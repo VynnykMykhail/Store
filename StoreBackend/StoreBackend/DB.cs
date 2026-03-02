@@ -14,6 +14,8 @@ public class Db : DbContext
 
     public DbSet<ProductRating> ProductsRatings { get; set; }
 
+    public DbSet<BlockedUser> BlockedUsers { get; set; }
+
     public Db(DbContextOptions<Db> options) : base(options)
     {
 

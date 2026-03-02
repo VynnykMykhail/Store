@@ -78,17 +78,14 @@ public class ProductsController : Controller
     {
         try
         {
-            Console.WriteLine("2");
             var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
             if (bool.Parse(admin) == false)
             {
                 return Unauthorized();
             }
-            Console.WriteLine("1");
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {
-                Console.WriteLine("Product not exists");
                 return BadRequest();
             }
             product.Name = newProduct.Name;

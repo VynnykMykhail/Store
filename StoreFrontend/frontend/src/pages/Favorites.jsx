@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { FavoritesContext } from '../context/FavoritesProvider';
 import { Link } from 'react-router';
@@ -14,7 +13,7 @@ const Favorites = () => {
         <div className='main'>
             {favorites.map((product)=>(
                 <div className="cart-product">
-                    <div className="display-flex">
+                    <div className="display-flex" style={{justifyContent:"space-between", alignItems:"center"}}>
                         <Link style={{ textDecoration: 'none' }} to={`/products/${product.id}`}>
                             <div className="image">
                                 <img src={product.image} alt="" />
@@ -23,8 +22,9 @@ const Favorites = () => {
                         <div className="cart-values">
                             <p className="title">{product.name}</p>
                             <p className="price">{product.price}</p>
-                            <button onClick={()=>removeFromFavorites(product.id)}>Remove</button>
+                            
                         </div>
+                        <button onClick={()=>removeFromFavorites(product.id)} className='dark-button' style={{margin:0}}>Убрать</button>
                     </div>
                 </div>
             ))}

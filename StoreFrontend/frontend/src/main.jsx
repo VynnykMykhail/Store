@@ -14,7 +14,7 @@ import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
 import Profile from './pages/Profile.jsx';
-import { getProfile } from './loaders/getUsers.js';
+import { getProfile, getUser, getUsers } from './loaders/getUsers.js';
 import ContractProvider from './context/ContractProvider.jsx';
 import OrderConfirm from './pages/OrderConfirm.jsx';
 import { getProductHistory, getUserHistory } from './loaders/getHistory.js';
@@ -81,6 +81,16 @@ const router = createBrowserRouter([
           path:"productsInfo/:id",
           loader:getProduct,
           element:<ProductsInfo/>
+        },
+        {
+          path:"usersInfo",
+          loader:getUsers,
+          element:<ProductsInfo infoType="User"/>
+        },
+        {
+          path:"userInfo/:id",
+          loader:getUser,
+          element:<ProductsInfo infoType="User"/>
         }
       ]
     }

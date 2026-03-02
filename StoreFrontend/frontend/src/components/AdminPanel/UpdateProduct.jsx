@@ -1,31 +1,11 @@
 import  { useState } from 'react';
 const API = import.meta.env.VITE_API_BASE;
 import api from '../../../api/api';
+import Info from './Info';
 
 const UpdateProduct = () => {
     const [id,setId]=useState(0);
     const [product,setProduct]=useState({});
-    const [error,setError]=useState(null);
-    const [loaded,setLoad]=useState(false);
-
-    const  findProduct= async ()=>{
-        setError(null);
-        try{
-            const response= await api.get(`${API}/api/controllers/product/`+id);
-            if(response.status==200){
-                setProduct(response.data);
-                setLoad(true);
-            }else{
-                console.log(response);     
-            }
-        }catch(error){
-            if(error.data.type==null){
-                setError(error.data);
-            }
-            console.log(error);
-        }
-        console.log(product)
-    };
 
     const handle=(e)=>{
         if(e.target.value=="true"){
@@ -49,9 +29,9 @@ const UpdateProduct = () => {
         }
     }
 
-    if(loaded){
+    if(id!=0){
         return(
-          <div>
+          <div className='form'>
             <div>
                 <input type="text" placeholder="Название товара" value={product.name} onChange={(e)=>setProduct({...product, name: e.target.value})}/>
             </div>
@@ -67,15 +47,13 @@ const UpdateProduct = () => {
             <div>
                 <input type="text" placeholder="URL изображения товара" value={product.imageURL} onChange={(e)=>setProduct({...product, imageURL: e.target.value})}/>
             </div>
-            <button onClick={update}>update</button>
+            <button onClick={update}>Обновить</button>
           </div>  
         );
     }
     return (
         <div>
-            <input type="text" label="Id" placeholder='Введите Id товара' value={id} onChange={(e)=>setId(e.target.value)}/>
-            <button onClick={findProduct}>Найти</button>
-            {error?(<><p>{error}</p></>):(<></>)}
+            <Info request="/api/controllers/product/" path="" temp="Введите Id товара" returnId={setId} setObj={setProduct}/>
         </div>
     );
 }

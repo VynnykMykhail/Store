@@ -1,6 +1,4 @@
-import React, { Children } from 'react';
 import { createContext, useState, useEffect } from 'react';
-import Cart from '../pages/Cart';
 
 export const CartContext = createContext(null);
 

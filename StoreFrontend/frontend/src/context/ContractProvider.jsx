@@ -63,7 +63,7 @@ const ContractProvider = ({children}) => {
   }, []);
 
     return (
-       <ContractContext.Provider value={{account,connect, deposit}}>
+       <ContractContext.Provider value={{account, setAccount,connect, deposit}}>
             {children}
        </ContractContext.Provider>
     );

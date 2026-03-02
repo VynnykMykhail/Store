@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router";
-import './Products.css'
+import './Pages.css'
 import FullProduct from "../components/FullProduct";
 import { useContext } from "react";
 import { CartContext } from "../context/CartProvider";
@@ -13,13 +13,15 @@ const SingleProduct = ()=>{
     }
     return(
         <div className="main">
-            <div className="Single-product">
-            <FullProduct
-                product={product}
-            />
-            </div>
-            <div className="Add">
-                    {<button onClick={handleClick} disabled={!product.isAvaible}>{product.isAvaible?("Добавить в корзину"):("Товар недоступен")}</button>}
+            <div style={{width:"710px"}}>
+                <div className="Single-product">
+                <FullProduct
+                    product={product}
+                />
+                </div>
+                <div style={{textAlign:"right"}}>
+                        {<button onClick={handleClick} disabled={!product.isAvaible} className="dark-button">{product.isAvaible?("Добавить в корзину"):("Товар недоступен")}</button>}
+                </div>
             </div>
         </div>
     )
