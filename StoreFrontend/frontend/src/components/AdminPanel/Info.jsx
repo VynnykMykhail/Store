@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 
 //Шаблон для поиска Id товара или пользователя
-const Info = ({request, type="get",path,temp, returnId, setObj}) => {
+const Info = ({request, type="get",path,temp,text="Найти", returnId, setObj}) => {
     const [id,setId]=useState(0);
     const [message,setMessage]=useState(null);
     const navigate=useNavigate();
@@ -41,13 +41,16 @@ const Info = ({request, type="get",path,temp, returnId, setObj}) => {
             if(error.data.type==null){
                 setMessage(error.data);
             }
+            else{
+                setMessage("Ошибка");
+            }
         }
             
     };
     return (
         <div className='form'>
             <input type="text" label="Id" placeholder={temp} value={id} onChange={(e)=>setId(e.target.value)}/>
-            <button onClick={find}>Найти</button>
+            <button className="dark-button" onClick={find}>{text}</button>
             {message?(<><p>{message}</p></>):(<></>)}
         </div>
     );

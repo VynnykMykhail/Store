@@ -12,7 +12,7 @@ const ProductHistory = () => {
         <div>
             {history.map((item)=>(
                 <>
-                    <p>Product id: {item.productId}  User id: {item.userId}  Date: {item.date} Amount ordered: {item.count} Payment: {item.payment}</p>
+                    <p>Product id: {item.productId}  User id: {item.userId}  Date: {item.date} Amount ordered: {item.count} Payment: {item.payment} Phone number: {item.phoneNumber}</p>
                 </>
             ))}
         </div>

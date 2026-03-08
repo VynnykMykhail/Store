@@ -45,9 +45,11 @@ const ContractProvider = ({children}) => {
       });
 
       await tx.wait();
+      return true;
     } catch (e) {
       console.error(e);
       alert(e?.reason || e?.message || e);
+      return false;
     }
   }
 

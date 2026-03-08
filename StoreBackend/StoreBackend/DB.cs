@@ -10,11 +10,19 @@ public class Db : DbContext
 
     public DbSet<Product> Products { get; set; }
 
-    public DbSet<PurchaseHistory> ProductsPurchaseHistory { get; set; }
+    public DbSet<PurchaseHistory> ProductPurchaseHistory { get; set; }
 
     public DbSet<ProductRating> ProductsRatings { get; set; }
 
     public DbSet<BlockedUser> BlockedUsers { get; set; }
+
+    public DbSet<ImageModel> Images { get; set; }
+
+    public DbSet<LocationModel> Locations { get; set; }
+
+    public DbSet<Order> Orders { get; set; }
+
+    public DbSet<Category> ProductCategory { get; set; }
 
     public Db(DbContextOptions<Db> options) : base(options)
     {

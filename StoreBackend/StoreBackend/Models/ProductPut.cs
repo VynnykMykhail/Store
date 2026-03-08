@@ -9,14 +9,17 @@
 
         public bool IsAvaible { get; set; }
 
+        public string? Category { get; set; }
+
         public string ImageURL { get; set; }
 
-        public ProductPut(string name, string description, int price, bool isAvaible, string imageURL)
+        public ProductPut(string name, string description, int price, bool isAvaible, string? category, string imageURL)
         {
             Name = name;
             Description = description;
             Price = price;
             IsAvaible = isAvaible;
+            Category = category;
             ImageURL = imageURL;
         }
     }

@@ -3,18 +3,12 @@ import { CartContext } from "../context/CartProvider";
 import { useNavigate } from "react-router";
 
 const Cart=()=>{
-    const {cart, setCart, totalValue} = useContext(CartContext);
+    const {cart, setCart, ClearCart, totalValue} = useContext(CartContext);
     const [error,setError]=useState(null);
-    const token = localStorage.getItem("token");
     const navigate=useNavigate();
     const handleClick=()=>{
         setError(null);
-        if(token){
-            navigate("/orderConfirm");
-        }
-        else{
-            setError("Сначала войдите в аккаунт")
-        }
+        navigate("/orderConfirm");
     }
 
     const increaseCount=(id)=>{
@@ -30,7 +24,9 @@ const Cart=()=>{
     const decreaseCount=(id)=>{
         const products=cart.map((prod)=>{
             if(prod.id===id){
-                return{...prod, count: prod.count-1}
+                if(prod.count>1){
+                    return{...prod, count: prod.count-1}
+                }
             }
             return prod;
         })
@@ -46,7 +42,7 @@ const Cart=()=>{
     if(cart.length==0){
         return(
             <div className="main">
-                <h2>Cart is empty</h2>
+                <h2>Тележка пуста</h2>
             </div>
         )
     }
@@ -73,12 +69,13 @@ const Cart=()=>{
             </div>
             
             ))}
-            {cart.lenght=== 0 ? ( <h3>Тележка пуста</h3>) : ( 
-                <h3>Всего: {totalValue}</h3>)
-            }
-            <button className="dark-button" onClick={handleClick}>
-                Оформить заказ
-            </button>
+            <h3>Всего: {totalValue}</h3>
+            <div style={{display:"flex",justifyContent:"space-between"}}>
+                <button className="dark-button" onClick={handleClick}>
+                    Оформить заказ
+                </button>
+                <button className="dark-button" onClick={ClearCart}>Очистить тележку</button>
+            </div>
             {error?(<><p>{error}</p></>):(<></>)}
             
         </div>

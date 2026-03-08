@@ -11,6 +11,13 @@ const SingleProduct = ()=>{
     const handleClick=()=>{
         addToCart(product);
     }
+    if(product==null){
+        return(
+            <div className="main">
+                <h2>Не найдено</h2>
+            </div>
+        )
+    }
     return(
         <div className="main">
             <div style={{width:"710px"}}>

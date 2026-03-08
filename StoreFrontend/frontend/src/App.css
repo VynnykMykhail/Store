@@ -43,6 +43,9 @@ header button{
 .cart-button{
     width: 50px;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
 
@@ -72,8 +75,46 @@ header button{
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .panel.active{
     transform: translateX(0);
+}
+
+.admin-panel div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel-button-container{
+    position: fixed;
+    right: 0;
+    top: 50px;
+    width: 400px;
+    text-align: right;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.panel-button-container.active{
+    transform: translateX(-100%);
+}
+
+.admin-panel button{
+    padding: 10px;
+    color:white;
+    background-color: #4b4b4b;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+}
+
+
+.display-w-a{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
 }

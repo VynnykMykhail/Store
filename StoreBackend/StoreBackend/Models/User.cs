@@ -9,21 +9,18 @@
 
         public string Password { get; set; }
 
-        public bool IsAdmin { get; set; }
+        public string Role { get; set; }
 
-
-        public User(string name, string email, string password, bool isAdmin)
+        public string? PhoneNumber {  get; set; }
+        public User(string name, string email, string password, string role, string? phoneNumber)
         {
             Name = name;
             Email = email;
             Password = password;
-            IsAdmin = isAdmin;
+            Role = role;
+            PhoneNumber = phoneNumber;
         }
 
-        public override string ToString()
-        {
-            return $"Id: {Id}, Name: {Name}";
-        }
 
     }
 }

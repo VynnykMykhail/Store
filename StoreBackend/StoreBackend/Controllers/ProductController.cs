@@ -50,17 +50,16 @@ public class ProductsController : Controller
     }
 
     [HttpPost("product")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> AddProduct([FromBody] ProductPut product)
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
+            if (product.Description.Length > 700)
             {
-                return Unauthorized();
+                return BadRequest("Максимальная длина описания - 700 символов");
             }
-            Product newProduct = new Product(product.Name,product.Description,product.Price,0,0,0,product.IsAvaible,product.ImageURL);
+            Product newProduct = new Product(product.Name,product.Description,product.Category,product.Price,0,0,0,product.IsAvaible,product.ImageURL);
             Console.WriteLine(product);
             await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
@@ -73,15 +72,14 @@ public class ProductsController : Controller
     }
 
     [HttpPut("product/{id}")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product newProduct)
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
+            if (newProduct.Description.Length > 700)
             {
-                return Unauthorized();
+                return BadRequest("Максимальная длина описания - 700 символов");
             }
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
@@ -93,28 +91,23 @@ public class ProductsController : Controller
             product.Price = newProduct.Price;
             product.IsAvaible = newProduct.IsAvaible;
             product.ImageURL = newProduct.ImageURL;
+            product.Category=newProduct.Category;
             _context.Update(product);
             await _context.SaveChangesAsync();
             return Ok();
         }
         catch (Exception error)
         {
-            Console.WriteLine(error);
             return BadRequest();
         }
     }
 
     [HttpDelete("product/{id}")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
-            {
-                return Unauthorized();
-            }
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {

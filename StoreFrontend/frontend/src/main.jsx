@@ -17,9 +17,13 @@ import Profile from './pages/Profile.jsx';
 import { getProfile, getUser, getUsers } from './loaders/getUsers.js';
 import ContractProvider from './context/ContractProvider.jsx';
 import OrderConfirm from './pages/OrderConfirm.jsx';
-import { getProductHistory, getUserHistory } from './loaders/getHistory.js';
+import { getMyOrders, getPhoneHistory, getProductHistory, getUserHistory } from './loaders/getHistory.js';
 import ProductHistory from './pages/ProductHistory.jsx';
-import ProductsInfo from './pages/ProductsInfo.jsx';
+import InfoPage from './pages/InfoPage.jsx';
+import { getImages } from './loaders/getImages.js';
+import UpdateProfile from './pages/UpdateProfile.jsx';
+import { getLocations } from './loaders/getOrdersLocation.js';
+import MyOrders from './pages/MyOrders.jsx';
 
 
 const router = createBrowserRouter([
@@ -59,8 +63,19 @@ const router = createBrowserRouter([
           element:<Profile/>
         },
         {
+          path:"updateProfile",
+          loader: getProfile,
+          element:<UpdateProfile/>
+        },
+        {
           path:"orderConfirm",
+          loader: getLocations,
           element:<OrderConfirm/>
+        },
+        {
+          path:"myOrders",
+          loader: getMyOrders,
+          element:<MyOrders/>
         },
         {
           path: "productHistory/:id",
@@ -73,37 +88,47 @@ const router = createBrowserRouter([
           element: <ProductHistory/>
         },
         {
+          path:"phoneHistory/:num",
+          loader: getPhoneHistory,
+          element: <ProductHistory/>
+        },
+        {
           path:"productsInfo",
           loader:getProducts,
-          element:<ProductsInfo/>
+          element:<InfoPage/>
         },
         {
           path:"productsInfo/:id",
           loader:getProduct,
-          element:<ProductsInfo/>
+          element:<InfoPage/>
         },
         {
           path:"usersInfo",
           loader:getUsers,
-          element:<ProductsInfo infoType="User"/>
+          element:<InfoPage infoType="User"/>
         },
         {
           path:"userInfo/:id",
           loader:getUser,
-          element:<ProductsInfo infoType="User"/>
+          element:<InfoPage infoType="User"/>
+        },
+        {
+          path:"images",
+          loader: getImages,
+          element:<InfoPage infoType="Images"/>
         }
       ]
     }
 ])
 
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
-    <ContractProvider>
-      <FavoritesProvider>
-        <CartProvider>
-          <RouterProvider router={router}/>
-        </CartProvider>
-      </FavoritesProvider>
-    </ContractProvider>
-  </AuthProvider>
+  <ContractProvider>
+    <AuthProvider>
+        <FavoritesProvider>
+          <CartProvider>
+            <RouterProvider router={router}/>
+          </CartProvider>
+        </FavoritesProvider>
+    </AuthProvider>
+  </ContractProvider>
 );

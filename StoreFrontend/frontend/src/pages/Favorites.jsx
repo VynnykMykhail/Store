@@ -21,7 +21,7 @@ const Favorites = () => {
                         </Link>
                         <div className="cart-values">
                             <p className="title">{product.name}</p>
-                            <p className="price">{product.price}</p>
+                            <p className="price">Стоимость: {product.price}</p>
                             
                         </div>
                         <button onClick={()=>removeFromFavorites(product.id)} className='dark-button' style={{margin:0}}>Убрать</button>

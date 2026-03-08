@@ -7,7 +7,7 @@ const FullProduct = ({product})=>{
     const token = localStorage.getItem("token");
     const [rating, setRating]=useState(0);
     const [error,setError]=useState(null);
-    const{userAdmin}=useContext(AuthContext);
+    const{isAdmin}=useContext(AuthContext);
     useEffect(()=>{
         async function get(){
             if(token){
@@ -39,6 +39,9 @@ const FullProduct = ({product})=>{
                 }
             }
         }
+        else{
+            setError("Нужно войти в аккаунт для оценки");
+        }
     }
 
     return(
@@ -46,10 +49,11 @@ const FullProduct = ({product})=>{
             <div className="image">
                 <img src={product.imageURL} alt="" />
             </div>
-            {userAdmin?(<><p>Id: {product.id}</p></>):(<></>)}
+            {isAdmin?(<><p>Id: {product.id}</p></>):(<></>)}
             <p className="title">{product.name}</p>
+            {product.category?(<><p>Категория: {product.category}</p></>):(<></>)}
                 <div className="product-values">
-                    <p className="price">{"Цена: "+product.price}</p>
+                    <p className="price">{"Цена: "+product.price} Wei</p>
                     <p className="rating">{"Рейтинг: "+product.rating}</p>
                     <div className="stars">
                         <button onClick={()=>rate(1)}>{rating>0?(<i class="fa-solid fa-star" style={{color:"#fffb01"}}></i>):(<i class="fa-regular fa-star"></i>)}</button>

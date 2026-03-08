@@ -6,6 +6,7 @@
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public string? Category { get; set; }
         public int Price {  get; set; }
 
         public double Rating { get; set; }
@@ -18,10 +19,11 @@
 
         public string ImageURL {  get; set; }
 
-        public Product(string name, string description, int price, double rating, int totalRating, int ratingCount, bool isAvaible, string imageURL)
+        public Product(string name, string description, string? category, int price, double rating, int totalRating, int ratingCount, bool isAvaible, string imageURL)
         {
             Name = name;
             Description = description;
+            Category = category;
             Price = price;
             Rating = rating;
             TotalRating = totalRating;

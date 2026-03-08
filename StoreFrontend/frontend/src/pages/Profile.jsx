@@ -5,26 +5,36 @@ import { ContractContext } from "../context/ContractProvider";
 
 const Profile = () => {
     const user=useLoaderData();
-    const {setUserAdmin}=useContext(AuthContext);
-    const {account,setAccount,connect}=useContext(ContractContext);
+    const {logout}=useContext(AuthContext);
+    const {account,connect}=useContext(ContractContext);
     const navigate=useNavigate();
+    
+    const handleClick=()=>{
+        navigate('/updateProfile')
+    }
 
-    const logout=()=>{
-        localStorage.removeItem('token');
-        localStorage.removeItem('userAdmin');
-        setUserAdmin(false);
-        setAccount("");
+    const handleOrders=()=>{
+        navigate('/myOrders')
+    }
+    const exit=()=>{
+        logout();
         navigate('/products');
     }
     return (
         <div className="main">
-            <p>{user.name}</p>
-            {account==""?(<></>):(<><p>{account}</p></>)}
+            <p>Пользователь: {user.name}</p>
+            {account==""?(<></>):(<><p>Адрес кошелька: {account}</p></>)}
             <div>
                 <button className="dark-button" onClick={connect}>Подключить кошелёк</button>
             </div>
             <div>
-                <button className="dark-button" onClick={logout}>Logout</button>
+                <button className="dark-button" onClick={handleClick}>Обновить профиль</button>
+            </div>
+            <div>
+                <button className="dark-button" onClick={handleOrders}>Мои заказы</button>
+            </div>
+            <div>
+                <button className="dark-button" onClick={exit}>Выйти</button>
             </div>
         </div>
     );

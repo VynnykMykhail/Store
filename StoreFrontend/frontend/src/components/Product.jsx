@@ -4,7 +4,7 @@ import { FavoritesContext } from "../context/FavoritesProvider";
 import { AuthContext } from "../context/AuthProvider";
 const Product = ({product})=>{
     const {isInFavorites,addToFavorites}=useContext(FavoritesContext);
-    const{userAdmin}=useContext(AuthContext);
+    const{isAdmin}=useContext(AuthContext);
 
     const handleClick=()=>{
         addToFavorites(product);
@@ -13,7 +13,7 @@ const Product = ({product})=>{
         <div className="product">
             <div className="icon">
                 <button onClick={handleClick}>
-                    {isInFavorites(product.id)?(<i class="fa-solid fa-heart" style={{color:'#74026e'}}></i>):(<i class="fa-regular fa-heart" ></i>)}
+                    {isInFavorites(product.id)?(<i className="fa-solid fa-heart" style={{color:'#74026e'}}></i>):(<i class="fa-regular fa-heart" ></i>)}
                 </button>
             </div>
             <Link style={{ textDecoration: 'none' }} to={`/products/${product.id}`}>
@@ -23,8 +23,8 @@ const Product = ({product})=>{
             </Link>
             <p className="title">{product.name}</p>
             <div className="product-values">
-                {userAdmin?(<><p>Id: {product.id}</p></>):(<></>)}
-                <p className="price">{product.price}</p>
+                {isAdmin?(<><p>Id: {product.id}</p></>):(<></>)}
+                <p className="price">{product.price} Wei</p>
                 <p className="rating">R: {product.rating}</p>
             </div>
         </div>

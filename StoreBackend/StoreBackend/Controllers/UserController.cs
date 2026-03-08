@@ -23,17 +23,12 @@ public class UsersController : Controller
     }
 
     [HttpGet("users")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> Users()
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
-            {
-                return Unauthorized();
-            }
-            var users = await _context.Users.Select(u => new {u.Id, u.Name,u.Email,u.IsAdmin}).ToListAsync();
+            var users = await _context.Users.Select(u => new {u.Id, u.Name,u.Email,u.Role}).ToListAsync();
             return Ok(users);
         }
         catch (Exception ex)
@@ -43,16 +38,11 @@ public class UsersController : Controller
     }
 
     [HttpGet("user/{id}")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> User(int id)
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
-            {
-                return Unauthorized();
-            }
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             if (user == null)
             {
@@ -63,7 +53,7 @@ public class UsersController : Controller
                 id = user.Id,
                 name = user.Name,
                 email = user.Email,
-                isAdmin=user.IsAdmin,
+                role=user.Role,
             };
             return Ok(newUser);
         }
@@ -108,7 +98,10 @@ public class UsersController : Controller
             var newUser = new
             {
                 id = user.Id,
-                name = user.Name
+                name = user.Name,
+                email = user.Email,
+                phoneNumber=user.PhoneNumber
+
             };
             return Ok(newUser);
         }
@@ -117,6 +110,89 @@ public class UsersController : Controller
             return BadRequest();
         }
     }
+
+    [HttpGet("ownNumber")]
+    [Authorize]
+    public async Task<IActionResult> GetOwnNumber()
+    {
+        try
+        {
+            var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+            int cId = int.Parse(id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == cId);
+            return Ok(user?.PhoneNumber);
+        }
+        catch
+        {
+            return BadRequest();
+        }
+    }
+
+
+    [HttpPut("updateProfile")]
+    [Authorize]
+    public async Task<IActionResult> UpdateProfile([FromBody] UserPut newUser)
+    {
+        try
+        {
+            if (newUser.Name.Length < 4)
+            {
+                return BadRequest("Слишком короткое имя");
+            }
+            else if (!newUser.Name.Any(char.IsLetter))
+            {
+                return BadRequest("Имя должно содержать буквы");
+            }
+            else if (!newUser.Email.Contains("@gmail.com"))
+            {
+                return BadRequest("Неправильный тип почты");
+            }
+            else if (newUser.Email.Length < 11)
+            {
+                return BadRequest("Слишком короткая почта");
+            }
+            else if (newUser.Password!=null)
+            {
+                if (newUser.Password.Length < 6)
+                {
+                    return BadRequest("Слишком короткий пароль");
+                }
+                else if (!newUser.Password.Any(char.IsLetter))
+                {
+                    return BadRequest("Пароль должен содержать буквы");
+                }
+            }
+            else if (newUser.PhoneNumber != null)
+            {
+                if(newUser.PhoneNumber.Length < 13|| newUser.PhoneNumber.Length > 13 || newUser.PhoneNumber[0]!='+'||!newUser.PhoneNumber.Substring(1).All(char.IsDigit))
+                {
+                    return BadRequest("Неправильный номер телефона");
+                }
+            }
+            var id = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("id"))?.Value;
+            int cId = int.Parse(id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == cId);
+            user.Name=newUser.Name.Trim();
+            user.Email=newUser.Email.Trim();
+            if (newUser.Password != null)
+            {
+                var password = PasswordHasher.HashPassword(newUser.Password.Trim());
+                user.Password = password;
+            }
+            if (newUser.PhoneNumber != null)
+            {
+                user.PhoneNumber = newUser.PhoneNumber;
+            }
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest();
+        }
+    }
+
 
     [HttpPost("register")]
     [AllowAnonymous]
@@ -135,16 +211,27 @@ public class UsersController : Controller
                 {
                     return BadRequest("Слишком короткое имя");
                 }
-                if (!user.Email.Contains("@gmail.com")) {
+                else if (!user.Name.Any(char.IsLetter))
+                {
+                    return BadRequest("Имя должно содержать буквы");
+                }
+                else if (!user.Email.Contains("@gmail.com")) {
                     return BadRequest("Неправильный тип почты");
                 }
-                if (user.Password.Length < 6)
+                else if (user.Email.Length < 11)
+                {
+                    return BadRequest("Слишком короткая почта");
+                }
+                else if (user.Password.Length < 6)
                 {
                     return BadRequest("Слишком короткий пароль");
                 }
-                var password = PasswordHasher.HashPassword(user.Password);
-                User newUser = new User(user.Name, user.Email, password, false);
-                bool check = PasswordHasher.ComparePasswords("1234", password);
+                else if (!user.Password.Any(char.IsLetter))
+                {
+                    return BadRequest("Пароль должен содержать буквы");
+                }
+                var password = PasswordHasher.HashPassword(user.Password.Trim());
+                User newUser = new User(user.Name.Trim(), user.Email.Trim(), password, "User",null);
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
                 existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
@@ -177,7 +264,7 @@ public class UsersController : Controller
                 {
                     var token = GenerateToken(existingUser);
                     Console.WriteLine(token);
-                    return Ok(new { Token = token, Admin = existingUser.IsAdmin });
+                    return Ok(new { Token = token, Admin = existingUser.Role });
                 }
                 else
                 {
@@ -192,15 +279,43 @@ public class UsersController : Controller
         }
     }
 
+    [HttpPut("userRole/{id:int}/{role}")]
+    [Authorize(Roles ="Admin,SuperAdmin")]
+    public async Task<IActionResult> UpdateUser(int id, string role)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+        if (user == null)
+        {
+            return BadRequest("Пользователь не найден");
+        }
+        if (user.Role == "SuperAdmin") {
+            return BadRequest();
+        }
+        var userRole=HttpContext.User.Claims.FirstOrDefault(c => c.Type==ClaimTypes.Role)?.Value;
+        if (role == "Admin")
+        {
+            if (userRole == "Admin")
+            {
+                return Unauthorized();
+            }
+        }
+        else if (role != "User")
+        {
+            return BadRequest();
+        }
+        user.Role = role;
+        _context.Update(user);
+        await _context.SaveChangesAsync();
+        return Ok();
+    }
 
-    //Базовая реализация Jwt токена, в основном для проверки Id и является ли пользователь админом. Токен не обновляется, проверку истечения срока выключил
     public string GenerateToken(User user)
     {
         var claims = new[]
         {
             new Claim("id", user.Id.ToString(),ClaimValueTypes.Integer),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim("is_admin", user.IsAdmin.ToString(), ClaimValueTypes.Boolean),
+            new Claim(ClaimTypes.Role, user.Role),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         };
 

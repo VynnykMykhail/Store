@@ -102,7 +102,7 @@ public class ProductsRatingsController : Controller
             {
                 return BadRequest("Продукт не существует");
             }
-            var history = await _context.ProductsPurchaseHistory.FirstOrDefaultAsync(h => h.UserId == cId && h.ProductId == rating.ProductId);
+            var history = await _context.ProductPurchaseHistory.FirstOrDefaultAsync(h => h.UserId == cId || h.PhoneNumber==user.PhoneNumber && h.ProductId == rating.ProductId);
             if (history == null)
             {
                 return BadRequest("Нельзя оценить продукт который не приобрели");
@@ -135,16 +135,11 @@ public class ProductsRatingsController : Controller
 
 
     [HttpDelete("productRating/{id}")]
-    [Authorize]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public async Task<IActionResult> ResetProductRating(int id)
     {
         try
         {
-            var admin = HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("is_admin"))?.Value;
-            if (bool.Parse(admin) == false)
-            {
-                return Unauthorized();
-            }
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {
